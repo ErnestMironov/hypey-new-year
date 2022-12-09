@@ -249,7 +249,7 @@ body:after {
 .smoke img {
 	width: 200rem;
 	position: relative;
-	transition: all ease-out 0.7`s;
+	transition: all ease-out 0.7s;
 }
 
 /* ------------------------------------------------------ */
