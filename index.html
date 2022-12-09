@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>HypeFactory</title>
+		<link rel="stylesheet" href="style.css" />
+		<link rel="shortcut icon" href="./assets/icon.png" type="image/x-icon" />
+	</head>
+	<body>
+		<main>
+			<a href="/">
+				<img src="./assets/logo.svg" alt="Logo hypeFactory" class="logo" />
+			</a>
+			<h1 class="caption">Hypey New Year!</h1>
+			<p class="desc">
+				We wish you a very Hype-y New Year and we just know that the new 2023
+				will fulfil your boldest goals. And we'll be there for you, ready to
+				help and accomplish them.
+			</p>
+			<p class="desc">
+				Not only HypeFactory forecasts campaign results but also foresees the
+				future and our hype premonition is telling us 2023 will be a wonderful
+				year. We’ve got more predictions for you, so set an intention and push
+				the button!
+			</p>
+			<a class="button">
+				<img
+					src="./assets/rounded-text.svg"
+					alt=""
+					class="button__rounded-text"
+				/>
+				<div class="button__circle">
+					Get <br />
+					a prediction!
+				</div>
+			</a>
+			<picture>
+				<source
+					media="(max-width: 799px)"
+					srcset="./assets/santa_mobile.webp"
+					type="image/webp"
+				/>
+				<source media="(max-width: 799px)" srcset="./assets/santa_mobile.png" />
+				<source
+					media="(min-width: 800px)"
+					srcset="./assets/santa.webp"
+					type="image/webp"
+				/>
+				<source media="(min-width: 800px)" srcset="./assets/santa.png" />
+				<img
+					src="./assets/santa_mobile.png"
+					alt="Chris standing up holding his daughter Elva"
+					class="santa"
+				/>
+			</picture>
+			<div class="smoke">
+				<picture>
+					<source
+						media="(min-width: 800px)"
+						srcset="./assets/smoke.webp"
+						type="image/webp"
+					/>
+					<img id="smoke" src="./assets/smoke.png" alt="" />
+				</picture>
+			</div>
+		</main>
+		<script src="./script.js"></script>
+	</body>
+</html>
