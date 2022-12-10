@@ -145,22 +145,36 @@ html {
 	font-size: 0.834vw;
 	font-family: "Gilroy";
 	color: var(--text-color);
+	background: rgb(35, 35, 35);
 }
 
 body {
-	background: var(--accent-color);
+	background-color: var(--accent-color);
+	opacity: 0;
 	padding: 3.75rem 8.75rem 0;
+	animation: fadeIn 0.5s 0.5s ease forwards;
+	height: 100%;
+	min-height: 100vh;
 }
 
 body:after {
 	content: "";
 	background-image: url("./assets/noise.webp");
-	position: absolute;
-	width: 100vw;
+	position: fixed;
+	width: 100%;
 	height: 100%;
 	top: 0;
 	left: 0;
 	pointer-events: none;
+}
+
+main {
+	opacity: 0;
+	animation: slideInLeft 0.5s ease-out 1s forwards;
+}
+
+.home-page {
+	padding-bottom: 8.375rem;
 }
 
 .logo {
@@ -169,7 +183,7 @@ body:after {
 
 .caption {
 	font-weight: 900;
-	font-size: 13.0489rem;
+	font-size: 12.8rem;
 	line-height: 130%;
 	margin-top: 4.4375rem;
 }
@@ -191,7 +205,7 @@ body:after {
 
 .santa {
 	position: absolute;
-	right: 0;
+	right: -7.5rem;
 	top: 6.25rem;
 	width: 101.875rem;
 }
@@ -238,18 +252,64 @@ body:after {
 	position: fixed;
 	bottom: 0;
 	left: 0;
-	width: 100%;
+	width: 100vw;
 	display: flex;
 	justify-content: center;
 	overflow: hidden;
 	pointer-events: none;
-	transform: translateY(30%);
+	transform: translateY(25%);
 }
 
 .smoke img {
 	width: 200rem;
 	position: relative;
 	transition: all ease-out 0.7s;
+}
+
+/* ------------------------------------------------------ */
+/*                       PREDICTION                       */
+/* ------------------------------------------------------ */
+
+.prediction {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-top: 6.6875rem;
+}
+
+.prediction__title {
+	font-weight: 900;
+	font-size: 4.5rem;
+	line-height: 110%;
+	max-width: 42rem;
+	text-align: justify;
+}
+
+.prediction__desc {
+	margin-top: 3.75rem;
+}
+
+.prediction__image-box {
+	position: relative;
+	width: 53rem;
+	margin-left: 7.5rem;
+}
+
+.prediction__rounded-text {
+	width: 100%;
+	animation: spin 45s linear infinite;
+}
+
+.prediction__image {
+	position: absolute;
+	width: 43.75rem;
+	height: 43.75rem;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	border-radius: 50%;
+	object-fit: cover;
+	object-position: center;
 }
 
 /* ------------------------------------------------------ */
@@ -263,5 +323,31 @@ body:after {
 
 	to {
 		transform: rotate(360deg);
+	}
+}
+
+@keyframes slideInLeft {
+	0% {
+		transform: translateX(-100vw);
+		opacity: 0;
+	}
+
+	50% {
+		opacity: 0;
+	}
+
+	100% {
+		transform: translateX(0);
+		opacity: 1;
+	}
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
 	}
 }
