@@ -145,14 +145,11 @@ html {
 	font-size: 0.834vw;
 	font-family: "Gilroy";
 	color: var(--text-color);
-	background: rgb(35, 35, 35);
+	background-color: var(--accent-color);
 }
 
 body {
-	background-color: var(--accent-color);
-	opacity: 0;
 	padding: 3.75rem 8.75rem 0;
-	animation: fadeIn 0.5s 0.5s ease forwards;
 	height: 100%;
 	min-height: 100vh;
 }
