@@ -1,0 +1,19 @@
+{
+	"name": "hypey-new-year",
+	"version": "1.0.0",
+	"description": "",
+	"main": "predictionPagesGenerator.js",
+	"scripts": {
+		"generate-predictions": "node predictionPagesGenerator.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/ErnestMironov/hypey-new-year.git"
+	},
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/ErnestMironov/hypey-new-year/issues"
+	},
+	"homepage": "https://github.com/ErnestMironov/hypey-new-year#readme"
+}

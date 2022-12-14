@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
 @import url("./assets/font/stylesheet.css");
 
 /* http://meyerweb.com/eric/tools/css/reset/ 
@@ -133,6 +140,7 @@ table {
 *,
 *:before,
 *:after {
+	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
 }
 
@@ -167,6 +175,7 @@ body:after {
 
 main {
 	opacity: 0;
+	-webkit-animation: slideInLeft 0.5s ease-out 1s forwards;
 	animation: slideInLeft 0.5s ease-out 1s forwards;
 }
 
@@ -208,8 +217,14 @@ main {
 }
 
 .button {
+	display: -webkit-inline-box;
+	display: -ms-inline-flexbox;
 	display: inline-flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
 	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
 	align-items: center;
 	background: transparent;
 	border: none;
@@ -220,14 +235,22 @@ main {
 }
 
 .button:hover .button__circle {
+	-webkit-transform: scale(1.1);
+	-ms-transform: scale(1.1);
 	transform: scale(1.1);
 }
 
 .button__circle {
 	width: 13.125rem;
 	height: 13.125rem;
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
 	align-items: center;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
 	justify-content: center;
 	border-radius: 50%;
 	font-weight: 800;
@@ -237,11 +260,16 @@ main {
 	background: var(--text-color);
 	color: var(--accent-color);
 	position: absolute;
+	-webkit-transition: -webkit-transform ease-out 0.18s;
+	transition: -webkit-transform ease-out 0.18s;
+	-o-transition: transform ease-out 0.18s;
 	transition: transform ease-out 0.18s;
+	transition: transform ease-out 0.18s, -webkit-transform ease-out 0.18s;
 }
 
 .button__rounded-text {
 	width: 17.5rem;
+	-webkit-animation: spin 15s linear infinite;
 	animation: spin 15s linear infinite;
 }
 
@@ -250,16 +278,24 @@ main {
 	bottom: 0;
 	left: 0;
 	width: 100vw;
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
 	justify-content: center;
 	overflow: hidden;
 	pointer-events: none;
+	-webkit-transform: translateY(25%);
+	-ms-transform: translateY(25%);
 	transform: translateY(25%);
 }
 
 .smoke img {
 	width: 200rem;
 	position: relative;
+	-webkit-transition: all ease-out 0.7s;
+	-o-transition: all ease-out 0.7s;
 	transition: all ease-out 0.7s;
 }
 
@@ -268,8 +304,14 @@ main {
 /* ------------------------------------------------------ */
 
 .prediction {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
 	align-items: center;
+	-webkit-box-pack: justify;
+	-ms-flex-pack: justify;
 	justify-content: space-between;
 	margin-top: 6.6875rem;
 }
@@ -290,10 +332,12 @@ main {
 	position: relative;
 	width: 53rem;
 	margin-left: 7.5rem;
+	overflow: hidden;
 }
 
 .prediction__rounded-text {
 	width: 100%;
+	-webkit-animation: spin 45s linear infinite;
 	animation: spin 45s linear infinite;
 }
 
@@ -303,9 +347,13 @@ main {
 	height: 43.75rem;
 	top: 50%;
 	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
 	transform: translate(-50%, -50%);
 	border-radius: 50%;
+	-o-object-fit: cover;
 	object-fit: cover;
+	-o-object-position: center;
 	object-position: center;
 }
 
@@ -313,18 +361,33 @@ main {
 /*                       ANIMATIONS                       */
 /* ------------------------------------------------------ */
 
-@keyframes spin {
+@-webkit-keyframes spin {
 	from {
+		-webkit-transform: rotate(0);
 		transform: rotate(0);
 	}
 
 	to {
+		-webkit-transform: rotate(360deg);
 		transform: rotate(360deg);
 	}
 }
 
-@keyframes slideInLeft {
+@keyframes spin {
+	from {
+		-webkit-transform: rotate(0);
+		transform: rotate(0);
+	}
+
+	to {
+		-webkit-transform: rotate(360deg);
+		transform: rotate(360deg);
+	}
+}
+
+@-webkit-keyframes slideInLeft {
 	0% {
+		-webkit-transform: translateX(-100vw);
 		transform: translateX(-100vw);
 		opacity: 0;
 	}
@@ -334,7 +397,36 @@ main {
 	}
 
 	100% {
+		-webkit-transform: translateX(0);
 		transform: translateX(0);
+		opacity: 1;
+	}
+}
+
+@keyframes slideInLeft {
+	0% {
+		-webkit-transform: translateX(-100vw);
+		transform: translateX(-100vw);
+		opacity: 0;
+	}
+
+	50% {
+		opacity: 0;
+	}
+
+	100% {
+		-webkit-transform: translateX(0);
+		transform: translateX(0);
+		opacity: 1;
+	}
+}
+
+@-webkit-keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+
+	to {
 		opacity: 1;
 	}
 }
