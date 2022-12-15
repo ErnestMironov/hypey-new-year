@@ -13,7 +13,7 @@ function fileHandler() {
           <meta charset="UTF-8" />
           <meta http-equiv="X-UA-Compatible" content="IE=edge" />
           <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-          <meta property="og:title" content="Hype New Year" />
+          <meta property="og:title" content="Hypey New Year" />
           <meta property="og:type" content="article" />
           <meta property="og:image" content="${pred.img}"/>
           <meta property="og:description" content="${pred.description}"/>
@@ -30,11 +30,28 @@ function fileHandler() {
             <section class="prediction">
               <div>
                 <h1 id="predictionCaption" class="prediction__title">
-                  Hype New Year
+                  Hypey New Year
                 </h1>
                 <p id="predictionDescription" class="desc prediction__desc">
              ${pred.description}
                 </p>
+                	<div class="action-list">
+                    <a href="/" id="predictionLink" class="ellipse-btn">Get another</a>
+                    <a
+                      href="https://www.facebook.com/sharer/sharer.php?u=https://ernestmironov.github.io/hypey-new-year/predictions/prediction0.html"
+                      target="_blank"
+                      class="circle-btn"
+                      id="fbBtn"
+                    >
+                      <img src="../assets/facebook.svg" alt="facebook share" />
+                    </a>
+                    <button class="circle-btn">
+                      <img src="../assets/linkedin.svg" alt="linkedin share" />
+                    </button>
+                    <button id="copyBtn" class="circle-btn">
+                      <img src="../assets/copy.svg" alt="copy link" />
+                    </button>
+                  </div>
               </div>
               <div class="prediction__image-box">
                 <img

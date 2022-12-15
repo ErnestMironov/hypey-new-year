@@ -357,6 +357,47 @@ main {
 	object-position: center;
 }
 
+.action-list {
+	display: flex;
+	align-items: center;
+	margin-top: 110px;
+}
+
+.ellipse-btn {
+	background: #ffffff;
+	border-radius: 6.25rem;
+	padding: 0.5rem 2.9375rem;
+	border: 0;
+	font-weight: 700;
+	font-size: 1.125rem;
+	line-height: 130%;
+	color: var(--accent-color);
+	text-decoration: none;
+	margin-right: 2.5rem;
+	cursor: pointer;
+	transition: cubic-bezier(0.075, 0.82, 0.165, 1) all 0.2s;
+}
+
+.circle-btn {
+	border: 0;
+	padding: 0;
+	background: transparent;
+	margin-right: 1.25rem;
+	width: 2.5rem;
+	height: 2.5rem;
+	cursor: pointer;
+	transition: cubic-bezier(0.075, 0.82, 0.165, 1) all 0.2s;
+}
+
+.circle-btn img {
+	width: 100%;
+}
+
+.ellipse-btn:hover,
+.circle-btn:hover {
+	transform: scale(1.1);
+}
+
 /* ------------------------------------------------------ */
 /*                       ANIMATIONS                       */
 /* ------------------------------------------------------ */
