@@ -30,8 +30,27 @@ function generateRandomPredictionLink() {
   predictionBtn.setAttribute('href', predictionLink)
 }
 
-function copyLink(element) {
+function shareOrCopyLink() {
   const copyBtn = document.querySelector('#copyBtn')
+
+  if (navigator.share) {
+    const shareData = {
+      title: 'Hypey New Year',
+      text: 'Learn web development on MDN!',
+      url: location.href
+    }
+
+    copyBtn.addEventListener('click', async () => {
+      try {
+        await navigator.share(shareData);
+        resultPara.textContent = 'MDN shared successfully';
+      } catch (err) {
+        resultPara.textContent = `Error: ${err}`;
+      }
+    });
+
+    return
+  }
 
   copyBtn.addEventListener(
     'click',
@@ -61,5 +80,5 @@ window.addEventListener('DOMContentLoaded', (e) => {
   smokeAnime();
   generateFbLink()
   generateRandomPredictionLink()
-  copyLink()
+  shareOrCopyLink()
 })
