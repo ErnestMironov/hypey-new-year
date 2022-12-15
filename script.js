@@ -22,11 +22,10 @@ function generateRandomPredictionLink() {
   function linkGenerator() {
     const predictionsLength = 19
     const randNumb = Math.trunc(Math.random() * predictionsLength)
-    return window.location.pathname === `/prediction${randNumb}.html` ? linkGenerator : `${window.location.origin}/predictions/prediction${randNumb}.html`
+    return window.location.pathname === `/predictions/prediction${randNumb}.html` ? linkGenerator() : `${window.location.origin}/predictions/prediction${randNumb}.html`
   }
 
   const predictionLink = linkGenerator()
-  console.log("🚀 ~ file: script.js:29 ~ generateRandomPredictionLink ~ predictionLink", predictionLink)
 
   predictionBtn.setAttribute('href', predictionLink)
 }
