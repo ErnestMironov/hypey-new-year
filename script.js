@@ -9,7 +9,7 @@ function loader(delay) {
 
   setTimeout(function () {
     body.classList.add('loaded');
-  }, delay + 2700);
+  }, delay + 1700);
 }
 
 function getRandomNumber(min, max) {
