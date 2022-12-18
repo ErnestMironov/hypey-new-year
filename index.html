@@ -23,10 +23,30 @@
 	</head>
 	<body class="home-page">
 		<main>
-			<a href="/">
-				<img src="./assets/logo.svg" alt="Logo hypeFactory" class="logo" />
+			<a class="logo" href="https://hypefactory.com/">
+				<img src="./assets/logo.svg" alt="Logo hypeFactory" />
 			</a>
 			<h1 class="caption">Hypey New Year!</h1>
+			<div class="santa">
+				<picture>
+					<source
+					media="(max-width: 799px)"
+					srcset="./assets/santa_mobile.webp"
+					type="image/webp"
+					/>
+					<source media="(max-width: 799px)" srcset="./assets/santa_mobile.png" />
+					<source
+					media="(min-width: 800px)"
+					srcset="./assets/santa.webp"
+					type="image/webp"
+					/>
+					<source media="(min-width: 800px)" srcset="./assets/santa.png" />
+					<img
+					src="./assets/santa_mobile.png"
+					alt="Chris standing up holding his daughter Elva"
+					/>
+				</picture>
+			</div>
 			<p class="desc">
 				We wish you a very Hype-y New Year and we just know that the new 2023
 				will fulfil your boldest goals. And we'll be there for you, ready to
@@ -49,25 +69,6 @@
 					a prediction!
 				</div>
 			</a>
-			<picture>
-				<source
-					media="(max-width: 799px)"
-					srcset="./assets/santa_mobile.webp"
-					type="image/webp"
-				/>
-				<source media="(max-width: 799px)" srcset="./assets/santa_mobile.png" />
-				<source
-					media="(min-width: 800px)"
-					srcset="./assets/santa.webp"
-					type="image/webp"
-				/>
-				<source media="(min-width: 800px)" srcset="./assets/santa.png" />
-				<img
-					src="./assets/santa_mobile.png"
-					alt="Chris standing up holding his daughter Elva"
-					class="santa"
-				/>
-			</picture>
 		</main>
 		<div class="smoke">
 			<picture>
@@ -77,6 +78,7 @@
 					type="image/webp"
 				/>
 				<img id="smoke" src="./assets/smoke.png" alt="" />
+				<img src="./assets/smoke.png" alt="" />
 			</picture>
 		</div>
 		<script src="./script.js"></script>

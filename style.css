@@ -175,15 +175,22 @@ body:after {
 
 main {
 	opacity: 0;
-	-webkit-animation: slideInLeft 0.5s ease-out 1s forwards;
-	animation: slideInLeft 0.5s ease-out 1s forwards;
+	transition: cubic-bezier(0.075, 0.82, 0.165, 1) .2s;
+}
+
+body.loading main{
+	opacity: 0;
+}
+
+body.loaded main{
+	opacity: 1;
 }
 
 .home-page {
 	padding-bottom: 8.375rem;
 }
 
-.logo {
+.logo img{
 	width: 14rem;
 }
 
@@ -198,7 +205,7 @@ main {
 	font-weight: 700;
 	font-size: 1.375rem;
 	line-height: 130%;
-	margin-top: 5rem;
+	margin-top: 2.5rem;
 	max-width: 42rem;
 	text-align: justify;
 	position: relative;
@@ -209,10 +216,10 @@ main {
 	margin-top: 2.5625rem;
 }
 
-.santa {
+.santa img{
 	position: absolute;
 	right: -7.5rem;
-	top: 6.25rem;
+	top: 1.25rem;
 	width: 101.875rem;
 }
 
@@ -297,8 +304,12 @@ main {
 	-webkit-transition: all ease-out 0.7s;
 	-o-transition: all ease-out 0.7s;
 	transition: all ease-out 0.7s;
+	display: none;
 }
 
+.smoke #smoke {
+	display: block;
+}
 /* ------------------------------------------------------ */
 /*                       PREDICTION                       */
 /* ------------------------------------------------------ */
@@ -313,7 +324,6 @@ main {
 	-webkit-box-pack: justify;
 	-ms-flex-pack: justify;
 	justify-content: space-between;
-	margin-top: 6.6875rem;
 }
 
 .prediction__title {
@@ -363,6 +373,10 @@ main {
 	margin-top: 110px;
 }
 
+.action-list__soc {
+	display: flex;
+}
+
 .ellipse-btn {
 	background: #ffffff;
 	border-radius: 6.25rem;
@@ -379,6 +393,7 @@ main {
 }
 
 .circle-btn {
+	display: block;
 	border: 0;
 	padding: 0;
 	background: transparent;
@@ -479,5 +494,147 @@ main {
 
 	to {
 		opacity: 1;
+	}
+}
+
+/* ------------------------------------------------------ */
+/*                     MOBILE VERSION                     */
+/* ------------------------------------------------------ */
+
+@media screen and (max-width:1000px) {
+	body {
+		padding: 30px 20px 80px;
+		overflow-x: hidden;
+		height: auto;
+		width: 100vw;
+	}
+	
+	.home-page {
+		padding-bottom: 88px;
+	}
+
+	.logo {
+		display: flex;
+		justify-content: center;
+	}
+
+	.logo img{
+		width: 34.5rem;
+	}
+
+	.caption {
+		text-align: center;
+		font-size: 22rem;
+		line-height: 110%;
+		margin-top: 40px;
+	}
+
+	.santa {
+		position: relative;
+		width: calc(100% + 40px);
+		left: -20px;
+		margin-top: -30px;
+	}
+
+	.santa img {
+		position: relative;
+		width: 100%;
+		left: 0;
+		top: 0;
+	}
+
+	.desc {
+		font-weight: 600;
+		font-size: 18px;
+		line-height: 130%;
+		max-width: 100%;
+	}
+
+	.desc + .desc {
+		margin-top: 20px;
+	}
+
+	.button {
+		margin: 45px auto 0;
+		width: 100%;
+	}
+
+	.button__rounded-text {
+		width: 182px;
+	}
+
+	.button__circle {
+		width: 140px;
+		height: 140px;
+		font-size: 18px;
+		line-height: 20px;
+	}
+
+	/* ------------------------------------------------------ */
+	/*                    PREDICTION MOBILE                   */
+	/* ------------------------------------------------------ */
+
+	.prediction {
+		flex-direction: column-reverse;
+	}
+
+	.prediction__image-box {
+		width: 100%; 
+		margin: 60px 0 0;
+	}
+
+	.prediction__image {
+		width: 83%;
+		height: 83%;
+	}
+
+	.prediction__title {
+		margin: 80px 0 0;
+		max-width: 100%;
+		font-weight: 900;
+		font-size: 32px;
+		line-height: 110%;
+		text-align: center;
+	}
+
+	.prediction__desc {
+		margin-top: 40px;
+		font-weight: 700;
+		font-size: 17px;
+		line-height: 130%;
+	}
+
+	.action-list {
+		margin-top: 80px;
+		flex-direction: column;
+	}
+
+	.ellipse-btn {
+		font-weight: 700;
+		font-size: 17px;
+		line-height: 130%;
+		padding: 9px 50px;
+		margin-right: 0;
+		margin-bottom: 40px;
+	}
+
+	.circle-btn {
+		width: 40px;
+		height: 40px;
+	}
+	
+	.circle-btn:not(:last-child) {
+		margin-right: 20px;
+	}
+
+	.smoke img{
+		transform: translateX(-50%);
+    left: 50%;
+		width: 3000px;
+		display: block;
+	}
+
+	.smoke #smoke {
+		display: none;
 	}
 }

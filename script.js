@@ -1,5 +1,21 @@
 
 
+function loader(delay) {
+  const body = document.body;
+
+  setTimeout(function () {
+    body.classList.add('loading');
+  }, delay);
+
+  setTimeout(function () {
+    body.classList.add('loaded');
+  }, delay + 2700);
+}
+
+function getRandomNumber(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
 function smokeAnime() {
   const smoke = document.querySelector('#smoke');
 
@@ -14,6 +30,14 @@ function generateFbLink() {
   if (!btn) return;
 
   btn.setAttribute('href', `https://www.facebook.com/sharer/sharer.php?u=${window.location.href}`)
+}
+
+function generateLinkedInLink() {
+  const btn = document.querySelector('#linkedInBtn');
+
+  if (!btn) return;
+
+  btn.setAttribute('href', `https://www.linkedin.com/sharing/share-offsite/?url=${window.location.href}`)
 }
 
 function generateRandomPredictionLink() {
@@ -77,8 +101,10 @@ function shareOrCopyLink() {
 }
 
 window.addEventListener('DOMContentLoaded', (e) => {
+  loader(10)
   smokeAnime();
   generateFbLink()
+  generateLinkedInLink()
   generateRandomPredictionLink()
   shareOrCopyLink()
 })
